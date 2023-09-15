@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "Norse";
+  src: url(./miscellaneous/Norse.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 20px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.background_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../media/restaurant-brochure-menu-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  animation: zoomInOut 5s infinite alternate;
+}
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px 100px;
+}
+.title h1 {
+  color: white;
+  font-family: "Norse", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 5px 5px 10px rgba(149, 42, 42, 0.9);
+  font-size: 4.2rem;
+  margin: 0;
+  text-wrap: nowrap;
+}
+.title img {
+  filter: invert(100%);
+  width: min(300px, 100%);
+}
+.menu ul{
+  display: flex;
+  justify-content:center;
+  gap: 120px;
+  transition: scale ease 2s;
+}
+.menu ul li {
+  list-style: none;
+  background-color: rgba(256,256,256,.8);
+  padding: 20px;
+  height: auto;
+  flex-basis: 250px;
+  min-width: 200px;
+  box-shadow: 20px 20px 60px #bebebe, 
+              -20px -20px 60px #ffffff;
+}
+.menu ul li,
+.menu img {
+  border-radius: 40px;
+}
+.menu img {
+  height: 30vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+  padding-bottom: 10px;
+}
+.menu p {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: .9rem;
+}
+.menu ul li:hover {
+  scale: 1.1;
+}
+/* Keyframes */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
